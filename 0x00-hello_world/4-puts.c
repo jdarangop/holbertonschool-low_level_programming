@@ -1,8 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
- *Print the string specified
+ * main - Entry point
  *
- *with the command puts
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
