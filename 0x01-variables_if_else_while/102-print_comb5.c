@@ -14,11 +14,9 @@ for (i = 48; i < 58; i++)
 {
 for (j = 48; j < 58; j++)
 {
-for (z = 48; z < 58; z++)
+for (z = i; z < 58; z++)
 {
-for (w = 48; w < 58; w++)
-{
-if (i + j < z + w)
+for (w = j + 1; w < 58; w++)
 {
 putchar(i);
 putchar(j);
@@ -29,7 +27,6 @@ if (!(i == 57 && j == 56 && z == 57 && w == 57))
 {
 putchar(44);
 putchar(32);
-}
 }
 }
 }
