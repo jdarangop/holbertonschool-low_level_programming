@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ * times_table - Print the patron of numbres.
+ *
+ * Return: void.
+ */
 void times_table(void)
 {
 	int i;
@@ -11,7 +16,8 @@ void times_table(void)
 		for (j = 0; j <= 9; j++)
 		{
 			a = i * j;
-			if (a > 9) {
+			if (a > 9)
+			{
 				if (j != 0)
 				{
 					_putchar(44);
@@ -19,7 +25,6 @@ void times_table(void)
 				}
 				_putchar(a / 10 + '0');
 				_putchar(a % 10 + '0');
-					
 			}
 			else
 			{
