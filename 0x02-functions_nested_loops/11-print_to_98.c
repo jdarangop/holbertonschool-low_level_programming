@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/**
+ * print_to_98 - Print the numbers from a int n to 98.
+ *
+ * @n: An integer.
+ *
+ * Return: void.
+ */
 void print_to_98(int n)
 {
 	int i;
