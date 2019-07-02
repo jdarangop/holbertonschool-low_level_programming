@@ -1,24 +1,28 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+
+/**
+ * rev_string - Prints the string reversed.
+ * @s: The string to be reversed.
+ */
 
 void rev_string(char *s)
 {
-	int i = 0, j, contador;
-	int size = malloc(strlen(s));
-	int array[size];
+	char array[1024];
+	int i = 0, j, count;
 
 	while (*(s + i) != '\0')
 	{
 		array[i] = *(s + i);
 		i++;
-	}	
+	}
 
-	for (j = 0; j <= i; j++)
+	count = i;
+
+	for (j = 0; j <= i + 1; j++)
 	{
-		*(s + j) = array[contador];
-		contador--;
+		count--;
+		*(s + j) = array[count];
 	}
 
 }
+
