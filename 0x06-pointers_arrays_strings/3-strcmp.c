@@ -1,9 +1,25 @@
 #include "holberton.h"
 
+
 /**
-  * strcmp - Like strcmp.
+ *_strlen - Get the len.
+ * @s: string.
+ * Return: len of array.
+ */
+int _strlen(char *s)
+{
+	int contador = 0;
+
+	while (*(s + contador) != '\0')
+	{
+		contador++;
+	}
+	return (contador);
+}
+
+/**
+  * _strcmp - Like strcmp.
   * @s1: string.
-  * @n: the number of elements to swap
   * @s2: string.
   * Return: nothing.
   */
@@ -27,13 +43,3 @@ int _strcmp(char *s1, char *s2)
 }
 
 
-int _strlen(char *s)
-{
-	int contador = 0;
-
-	while (*(s + contador) != '\0')
-	{
-		contador++;
-	}
-	return (contador);
-}

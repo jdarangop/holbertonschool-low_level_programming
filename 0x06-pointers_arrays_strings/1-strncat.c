@@ -1,5 +1,22 @@
 #include "holberton.h"
 
+
+/**
+  *_strlen - Get the len.
+  * @s: string.
+  * Return: len of array.
+  */
+int _strlen(char *s)
+{
+	int contador = 0;
+
+	while (*(s + contador) != '\0')
+	{
+		contador++;
+	}
+	return (contador);
+}
+
 /**
   * _strncat - Like strncat.
   * @dest: string.
@@ -22,13 +39,3 @@ char *_strncat(char *dest, char *src, int n)
 
 }
 
-int _strlen(char *s)
-{
-	int contador = 0;
-
-	while (*(s + contador) != '\0')
-	{
-		contador++;
-	}
-	return (contador);
-}
