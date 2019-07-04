@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+  * leet - Encoding on leet.
+  * @s: String.
+  * Return: String enconded..
+  */
 char *leet(char *s)
 {
 	char array[5][2] = {{'a', 'A'}, {'e', 'E'},
@@ -11,12 +16,11 @@ char *leet(char *s)
 	while (s[i])
 	{
 		for (j = 0; j < 5; j++)
-		{	
+		{
 			if (array[j][0] == s[i] || array[j][1] == s[i])
-				s[i] = keys[j];
+			s[i] = keys[j];
 		}
 		i++;
 	}
 	return (s);
 }
-			
