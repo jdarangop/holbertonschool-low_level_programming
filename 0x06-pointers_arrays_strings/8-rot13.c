@@ -1,6 +1,10 @@
 #include "holberton.h"
 
-
+/**
+ * rot13 - Encoding in rot13.
+ * @s: String
+ * Return: String encoded..
+ */
 char *rot13(char *s)
 {
 	int i = 0, j;
@@ -22,6 +26,7 @@ char *rot13(char *s)
 			if (s[i] == normal[j])
 			{
 				s[i] = rot[j];
+				break;
 			}
 		}
 		i++;
