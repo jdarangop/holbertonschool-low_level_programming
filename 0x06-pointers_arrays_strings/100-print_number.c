@@ -8,6 +8,7 @@
 void print_number(int n)
 {
 	int num;
+	unsigned int m;
 	int i = 1000000000;
 
 	if (n > 0)
@@ -26,16 +27,16 @@ void print_number(int n)
 	}
 	else if (n < 0)
 	{
-		n *= -1;
-		while (n / i == 0)
+		m = -1*n;
+		while (m / i == 0)
 		{
 			i /= 10;
 		}
 		_putchar('-');
-		_putchar(n / i + '0');
+		_putchar(m / i + '0');
 		while (i != 1)
 		{
-			num = (n % i) / (i / 10);
+			num = (m % i) / (i / 10);
 			_putchar(num + '0');
 			i /= 10;
 		}
