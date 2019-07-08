@@ -27,7 +27,7 @@ void print_number(int n)
 	}
 	else if (n < 0)
 	{
-		m = -1*n;
+		m = -1 * n;
 		while (m / i == 0)
 		{
 			i /= 10;
