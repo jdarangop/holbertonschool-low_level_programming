@@ -1,28 +1,30 @@
 #include "holberton.h"
 
+/**
+  * _strchr - Write a function that locates a character in a string.
+  * @s: String.
+  * @c: Character.
+  * Return: String.
+  */
 char *_strchr(char *s, char c)
 {
-	int i = 0, flag = 0, j = 0;
-	char array[1024];
 
-	while (s[i])
+	while (*s != '\0')
 	{
-		if (s[i] == c || flag == 1)
+		if (*s == c)
 		{
-			array[j] = s[i];
-			flag = 1;
-			j++;
+			return (s);
 		}
+		s++;
 	}
 
-	if (flag)
+	if (*s == c)
 	{
-		return (array);
+		return (s);
 	}
 	else
 	{
 		return ('\0');
 	}
-
 }
 
