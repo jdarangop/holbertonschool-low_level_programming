@@ -24,13 +24,14 @@ char *_strstr(char *haystack, char *needle)
 		}
 
 		tmp2 = haystack;
+	
 		while (1)
 		{
 			if (*tmp1 == '\0')
 			{
 				return (haystack);
 			}
-			if (*tmp1 != *tmp2)
+			if (*tmp1 + 1 != *tmp2 + 1)
 			{
 				break;
 			}
