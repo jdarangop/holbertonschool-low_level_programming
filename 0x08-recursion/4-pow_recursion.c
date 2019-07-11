@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
-  * main - check the code for Holberton School students.
-  *
-  * Return: Always 0.
+  * _pow_recursion - Find the power between two numbers.
+  * @x: Base, integer.
+  * @y: Power, integer.
+  * Return: Answer.
   */
 int _pow_recursion(int x, int y)
 {
