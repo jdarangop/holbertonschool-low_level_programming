@@ -1,50 +1,52 @@
 #include "holberton.h"
 
-int count(char *s)
+/**
+ * lenght - Find the legnth of a srting.
+ * @s: String.
+ * Return: The lenght of the string.1
+ */
+int lenght(char *s)
 {
 	if (*s)
 	{
-		return (1 + count(s + 1));
+		return (1 + lenght(s + 1));
 	}
 
 	return (0);
 }
 
-int function(char *s, int len)
+/**
+  * function - Have the condition to define if it is a palindrome.
+  * @s: String.
+  * @len: Lenght of the string.
+  * @count: Counter of the function.
+  * Return: 1 if it is a palindrome and 0 if it doesn't.
+  */
+int function(char *s, int len, int count)
 {
-	len = count(s) - 1;
-
-	if (len % 2 != 0)
+	if (count >= len / 2)
 	{
-		if (*s == *(s + len))
-		{
-			++s;
-			--len;
-			return (function(s, len));
-		}
-		else
-		{
-			return (0);
-		}
 		return (1);
+	}
+	else if (*(s + count) == *(s + len - count))
+	{
+		return (function(s, len, count + 1));
 	}
 	else
 	{
-		if (*s > *(s + len))
-		{
-			++s;
-			--len;
-			return (function(s, len));
-		}
-		else
-		{
-			return (0);
-		}
-		return (1);
+		return (0);
 	}
 }
 
+/**
+  * is_palindrome - Answer if the string is a palindrome.
+  * @s: String.
+  * Return: 1 if it is palindrome and 0 if it doesn't.
+  */
 int is_palindrome(char *s)
 {
-	return (function(s, 0));
+	int len = lenght(s) - 1;
+	int count = 0;
+
+	return (function(s, len, count));
 }
