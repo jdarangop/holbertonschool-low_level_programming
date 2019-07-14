@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 			printf("0\n");
 			return (0);
 		}
-		else if ((*argv[1] >= 0 && *argv[1] <= 47) || (*argv[1] >= 58))
+		else if ((*argv[1] >= 0 && *argv[1] <= 47) || (*argv[1] >= 58 && *argv[1] < 127))
 		{
 			printf("Error\n");
 			return (1);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if ((*argv[i] >= 0 && *argv[i] <= 47) || (*argv[i] >= 58))
+			if ((*argv[i] >= 0 && *argv[i] <= 47) || (*argv[i] >= 58 && *argv[1] < 127))
 			{
 				printf("Error\n");
 				return (1);
