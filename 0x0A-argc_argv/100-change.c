@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+  * main - Print the minimum number of money for change.
+  * @argc: Number of parameters passed.
+  * @argv: Values passed.
+  * Return: Minimum number of money for change.
+  */
 int main(int argc, char *argv[])
 {
 	int num, count = 0;
@@ -12,6 +18,12 @@ int main(int argc, char *argv[])
 	}
 
 	num = atoi(argv[1]);
+
+	if (num < 0)
+	{
+		printf("%d\n", count);
+		return (count);
+	}
 
 	count += num / 25;
 	num = num % 25;
