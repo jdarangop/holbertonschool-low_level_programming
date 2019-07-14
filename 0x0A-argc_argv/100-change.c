@@ -25,6 +25,10 @@ int main(int argc, char *argv[])
 		return (count);
 	}
 
+	/**
+	  * while
+	  */
+
 	count += num / 25;
 	num = num % 25;
 	count += num / 10;
