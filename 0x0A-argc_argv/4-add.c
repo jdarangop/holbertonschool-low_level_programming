@@ -9,7 +9,7 @@
   */
 int main(int argc, char *argv[])
 {
-	int num1, i, count = 0;
+	int i, count = 0;
 
 	if (argc < 3)
 	{
@@ -20,15 +20,20 @@ int main(int argc, char *argv[])
 		}
 		else if (*argv[1] > 'a' && *argv[1] < 'z')
 		{
-			num1 = atoi(argv[1]);
+			/**
+			  *num1 = atoi(argv[1]);
+			 */
 			printf("Error\n");
 			return (1);
 		}
 		else
 		{
-			num1 = atoi(argv[1]);
-			printf("%d\n", num1);
-			return (0);
+			/**
+			  *num1 = atoi(argv[1]);
+			  *printf("%d\n", num1);
+			  */
+			printf("Error\n");
+			return (1);
 		}
 	}
 	else
