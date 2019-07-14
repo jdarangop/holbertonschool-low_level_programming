@@ -1,6 +1,12 @@
 #include <stdio.h>
 
-int main(int argc, char* argv[])
+/**
+  * main - Print name of arguments passed..
+  * @argc: Number of parameters passed.
+  * @argv: Values passed.
+  * Return: Always 0.
+  */
+int main(int argc, char *argv[])
 {
 	int i;
 

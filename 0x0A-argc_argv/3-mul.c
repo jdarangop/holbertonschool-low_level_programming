@@ -1,10 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
-int main(int argc, char* argv[])
+/**
+ * main - Print multipiclation between the two numbers.
+ * @argc: Number of parameters passed.
+ * @argv: Values passed.
+ * Return: 0 or 1 when have a error.
+ */
+int main(int argc, char *argv[])
 {
 	int num1, num2;
-	
+
 	if (argc != 3)
 	{
 		printf("Error\n");
