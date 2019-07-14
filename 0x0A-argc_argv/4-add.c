@@ -10,42 +10,20 @@
   */
 int main(int argc, char *argv[])
 {
-	int i, num1, count = 0;
+	int i, count = 0;
 
-	if (argc < 3)
+	for (i = 1; i < argc; i++)
 	{
-		if (argc == 1)
-		{
-			printf("0\n");
-			return (0);
-		}
-		else if (!isdigit(*argv[1]))
+		if (!isdigit(*argv[i]))
 		{
 			printf("Error\n");
 			return (1);
 		}
 		else
 		{
-			num1 = atoi(argv[1]);
-			printf("%d\n", num1);
-			return (num1);
+			count += atoi(argv[i]);
 		}
 	}
-	else
-	{
-		for (i = 1; i < argc; i++)
-		{
-			if (!isdigit(*argv[i]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				count += atoi(argv[i]);
-			}
-		}
-		printf("%d\n", count);
-		return (count);
-	}
+	printf("%d\n", count);
+	return (count);
 }
