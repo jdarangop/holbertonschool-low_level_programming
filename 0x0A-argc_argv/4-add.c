@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		{
 			num1 = atoi(argv[1]);
 			printf("%d\n", num1);
-			return (0);
+			return (num1);
 		}
 	}
 	else
@@ -45,6 +45,6 @@ int main(int argc, char *argv[])
 			}
 		}
 		printf("%d\n", count);
-		return (0);
+		return (count);
 	}
 }
