@@ -31,7 +31,6 @@ char *str_concat(char *s1, char *s2)
 	int i, j;
 	int count1, count2;
 
-	
 	if (s1 == NULL)
 	{
 		s1 = "";
@@ -41,7 +40,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	
 
 	count1 = _strlen(s1);
 	count2 = _strlen(s2);
