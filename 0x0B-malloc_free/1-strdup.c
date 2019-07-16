@@ -24,12 +24,12 @@ char *_strdup(char *str)
 		j++;
 	}
 
-	tmp = malloc(sizeof(char) * count);
+	tmp = (char *)malloc(sizeof(char) * count);
 
 	if (tmp != NULL)
 	{
 
-		for (i = 0; i <= count + 1; i++)
+		for (i = 0; i < count + 1; i++)
 		{
 			tmp[i] = str[i];
 		}
