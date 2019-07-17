@@ -1,8 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * argstostr - Concate the areguments.
+ * @ac: Number of arguments.
+ * @av: Arguments.
+ * Return: String concatenated.
+ */
+
 char *argstostr(int ac, char **av)
-{	
+{
 	int i, j, count = 0;
 	char *tmp;
 	char *tmp1;
@@ -24,6 +31,11 @@ char *argstostr(int ac, char **av)
 
 	tmp = malloc(sizeof(char) * count);
 	tmp1 = tmp;
+
+	if (tmp == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
