@@ -57,6 +57,11 @@ int words(char *str)
  */
 char **strtow(char *str)
 {
+
+	/**
+	*int i = 0, j = 0, pos, flag = 0, count = 0;
+	*char **tmp;
+	*/
 	if (str == NULL || !(_strcmp(str, "")))
 	{
 		return (NULL);
@@ -67,21 +72,22 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	tmp = malloc(sizeof(int *) * words(str));
-	while (str[i])
-	{
-		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
-		{
-			pos = i;
-			flag = 1;
-			count++;
-		}
-		else if (flag == 1)
-		{
-			tmp[j] = malloc(sizeof(char) * (count + 1));
-		}
-	}
-
+	/**
+	*tmp = malloc(sizeof(int *) * words(str));
+	*while (str[i])
+	*{
+	*	if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+	*	{
+	*		pos = i;
+	*		flag = 1;
+	*		count++;
+	*	}
+	*	else if (flag == 1)
+	*	{
+	*		tmp[j] = malloc(sizeof(char) * (count + 1));
+	*	}
+	*}
+	*/
 
 	return (NULL);
 }
