@@ -41,37 +41,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
+	if (n >= count2)
+	{
+		n = count2;
+	}
 	tmp = malloc((sizeof(char) * count1) + (sizeof(char) * count2) + 1);
 	if (tmp != NULL)
 	{
-		if (n >= count2)
+		for (i = 0; i < count1; i++)
 		{
-			for (i = 0; i < count1; i++)
-			{
-				tmp[i] = s1[i];
-			}
-			for (j = 0; j < count2; j++)
-			{
-				tmp[i] = s2[j];
-				i++;
-			}
-			tmp[i + 1] = '\0';
-			return (tmp);
+			tmp[i] = s1[i];
 		}
-		else
+		for (j = 0; j < n; j++)
 		{
-			for (i = 0; i < count1; i++)
-			{
-				tmp[i] = s1[i];
-			}
-			for (j = 0; j < n; j++)
-			{
-				tmp[i] = s2[j];
-				i++;
-			}
-			tmp[i + 1] = '\0';
-			return (tmp);
+			tmp[i] = s2[j];
+			i++;
 		}
+		tmp[i] = '\0';
+		return (tmp);
 	}
 	else
 	{
