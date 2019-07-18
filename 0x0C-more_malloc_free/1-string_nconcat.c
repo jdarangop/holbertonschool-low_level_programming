@@ -45,7 +45,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = count2;
 	}
-	tmp = malloc((sizeof(char) * count1) + (sizeof(char) * count2) + 1);
+	tmp = malloc((sizeof(char) * count1) + (sizeof(char) * n) + 1);
 	if (tmp != NULL)
 	{
 		for (i = 0; i < count1; i++)
