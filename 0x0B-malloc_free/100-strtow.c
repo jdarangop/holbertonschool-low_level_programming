@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * _strcmp - Like strcmp.
+ * @s1: string.
+ * @s2: string.
+ * Return: int.
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i = 0;
+
+
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	return (0);
+}
 
 /**
  * words - Count the numbers of words.
@@ -36,12 +57,12 @@ int words(char *str)
  */
 char **strtow(char *str)
 {
-	if (str == NULL || !(strcmp(str, "")))
+	if (str == NULL || !(_strcmp(str, "")))
 	{
 		return (NULL);
 	}
 
-	if (strcmp(str, " "))
+	if (_strcmp(str, " "))
 	{
 		return (NULL);
 	}
