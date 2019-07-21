@@ -24,6 +24,23 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
+  * _strlen - Find the lenght of a string.
+  * @s: String.
+  * Return: The lenght, integer.
+  */
+int _strlen(char *s, int i)
+{
+	int count = 0;
+
+	while (s[i] != ' ')
+	{
+		count++;
+		i++;
+	}
+	return (count);
+}
+
+/**
  * words - Count the numbers of words.
  * @str: String.
  *
@@ -49,6 +66,19 @@ int words(char *str)
 	return (count);
 }
 
+char *_strcpy(char *s, int i, char *tmp)
+{
+	int j;
+
+	for (j = 0; s[i] != ' '; i++, j++)
+	{
+		tmp[j] = s[i];
+	}
+	tmp[j] = '\0';
+
+	return (tmp);
+}
+
 /**
  * strtow - Extract all the words from an string.
  * @str: String.
@@ -58,37 +88,36 @@ int words(char *str)
 char **strtow(char *str)
 {
 
-	/**
-	*int i = 0, j = 0, pos, flag = 0, count = 0;
-	*char **tmp;
-	*/
-	if (str == NULL || !(_strcmp(str, "")))
+	int i = 0, j = 0, pos;
+	char **tmp;
+	
+	if (str == NULL || !(_strcmp(str, "")) || (words(str) == 0))
 	{
 		return (NULL);
 	}
 
-	if (_strcmp(str, " "))
+	if ((tmp = malloc(sizeof(int *) * (words(str) + 1))) == NULL)
 	{
 		return (NULL);
 	}
 
-	/**
-	*tmp = malloc(sizeof(int *) * words(str));
-	*while (str[i])
-	*{
-	*	if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
-	*	{
-	*		pos = i;
-	*		flag = 1;
-	*		count++;
-	*	}
-	*	else if (flag == 1)
-	*	{
-	*		tmp[j] = malloc(sizeof(char) * (count + 1));
-	*	}
-	*}
-	*/
+	while (str[i])
+	{
+		if (str[i] != ' ')
+		{
+			pos = _strlen(str, i);
+			tmp[j] = malloc(sizeof(char) * (pos + 1));
+			_strcpy(str, i, tmp[j]);
+			j++;
+			i += pos;
+		}
+		else
+		{
+			i++;
+		}
+	}
 
-	return (NULL);
+	tmp[j] = NULL;
+	return (tmp);
 }
 
