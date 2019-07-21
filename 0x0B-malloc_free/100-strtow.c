@@ -91,7 +91,7 @@ char **strtow(char *str)
 	int i = 0, j = 0, pos;
 	char **tmp;
 	
-	if (str == NULL || !(_strcmp(str, "")) || (words(str) == 0))
+	if (str == NULL || _strcmp(str, "") || (words(str) == 0))
 	{
 		return (NULL);
 	}
