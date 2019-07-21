@@ -26,13 +26,14 @@ int _strcmp(char *s1, char *s2)
 /**
   * _strlen - Find the lenght of a string.
   * @s: String.
+  * @i: Position.
   * Return: The lenght, integer.
   */
 int _strlen(char *s, int i)
 {
 	int count = 0;
 
-	while (s[i] != ' ')
+	while (s[i] != ' ' && s[i] != '\0')
 	{
 		count++;
 		i++;
@@ -52,7 +53,7 @@ int words(char *str)
 
 	while (*str)
 	{
-		if ((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z'))
+		if (*str != ' ')
 		{
 			flag = 1;
 		}
@@ -66,6 +67,13 @@ int words(char *str)
 	return (count);
 }
 
+/**
+ * _strcpy - Copy elements from a string to another.
+ * @s: String.
+ * @i: Position.
+ * @tmp: Array where it's saved.
+ * Return: The array whit the elements.
+ */
 char *_strcpy(char *s, int i, char *tmp)
 {
 	int j;
@@ -90,13 +98,14 @@ char **strtow(char *str)
 
 	int i = 0, j = 0, pos;
 	char **tmp;
-	
+
 	if (str == NULL || _strcmp(str, "") || (words(str) == 0))
 	{
 		return (NULL);
 	}
 
-	if ((tmp = malloc(sizeof(int *) * (words(str) + 1))) == NULL)
+	tmp = malloc(sizeof(int *) * (words(str) + 1));
+	if (tmp == NULL)
 	{
 		return (NULL);
 	}
