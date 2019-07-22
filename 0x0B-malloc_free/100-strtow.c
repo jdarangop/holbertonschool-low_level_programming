@@ -106,7 +106,6 @@ char **strtow(char *str)
 	tmp = malloc(sizeof(int *) * (words(str) + 1));
 	if (tmp == NULL)
 	{
-		free(tmp);
 		return (NULL);
 	}
 	while (str[i])
