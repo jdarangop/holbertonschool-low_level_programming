@@ -1,5 +1,4 @@
-#include "function_pointers.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
   * array_iterator - Print Array.
@@ -9,11 +8,12 @@
   */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
+	size_t i;
+
 	if (array == NULL || action == NULL)
 	{
 		return;
 	}
-	size_t i;
 
 	for (i = 0; i < size; i++)
 	{
