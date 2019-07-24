@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
   * int_index - Searches for an integer.
   * @array: Array.
