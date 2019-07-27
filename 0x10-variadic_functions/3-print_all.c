@@ -1,5 +1,10 @@
 #include "variadic_functions.h"
 
+/**
+  * print_all - Print the arguments passed.
+  * @format: Format of the arguments.
+  * Return: void.
+  */
 
 void print_all(const char * const format, ...)
 {
@@ -13,6 +18,7 @@ void print_all(const char * const format, ...)
 	{
 		char *tmp;
 		int flag = 0;
+
 		switch (format[i])
 		{
 			case 'c':
@@ -28,8 +34,7 @@ void print_all(const char * const format, ...)
 				tmp = va_arg(valist, char *);
 				if (tmp == NULL)
 				{
-					printf("(nil)");
-					break;
+					tmp = "(nil)";
 				}
 				printf("%s", tmp);
 				break;
