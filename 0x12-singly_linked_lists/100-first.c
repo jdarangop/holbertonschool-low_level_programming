@@ -1,8 +1,13 @@
 #include <stdio.h>
 
-void myStartupFun (void) __attribute__ ((constructor));
+void myfunction(void) __attribute__ ((constructor));
 
-void myStartupFun (void) 
-{ 
-    printf ("You're beat! and yet, you must allow,\nI bore my house upon my back!\n"); 
-} 
+/**
+  * myfunction - Print a string before the main.
+  * Return: void.
+  */
+void myfunction(void)
+{
+	printf("You're beat! and yet, you must allow,\n
+			I bore my house upon my back!\n");
+}
