@@ -19,13 +19,20 @@ int _strlen(const char *s)
 	return (i);
 }
 
+/**
+  * add_node_end - Add a new node at the end of the list.
+  * @head: Linked list.
+  * @str: The string.
+  * Return: The new node.
+  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *current, *newnode;
 
 	newnode = malloc(sizeof(list_t));
 	current = *head;
-	
+
 	newnode->str = strdup(str);
 	newnode->len = _strlen(str);
 	newnode->next = NULL;
@@ -35,18 +42,18 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(newnode);
 		return (NULL);
 	}
-	
+
 	if (*head == NULL)
 	{
 		*head = newnode;
 		return (NULL);
 	}
+
 	while (current->next != NULL)
 	{
 		current = current->next;
 	}
-	
+
 	current->next = newnode;
-	
 	return (newnode);
 }

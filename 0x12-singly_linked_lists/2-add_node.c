@@ -19,9 +19,17 @@ int _strlen(const char *s)
 	return (i);
 }
 
+/**
+  * add_node - Add a new node in the beginning.
+  * @head: Linked list.
+  * @str: The string.
+  * Return: New node..
+  */
+
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t * node;
+	list_t *node;
+
 	node = malloc(sizeof(list_t));
 	if (node == NULL)
 	{

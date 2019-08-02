@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
-  * print_list - Print the linked list.
+  * list_len - Find the lenght of the list.
   * @h: Linked list.
-  * Return: Number of nodes.
+  * Return: Lenght of list.
   */
 
 size_t list_len(const list_t *h)

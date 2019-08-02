@@ -1,13 +1,26 @@
 #include "lists.h"
 
+/**
+  * free_list - Clean the list.
+  * @head: The list.
+  * Return: void.
+  */
+
 void free_list(list_t *head)
 {
 	list_t *current;
 
-	while ((current = head) != NULL)
+	if (head == NULL)
 	{
-		head = head->next;
-		free (current);
+		return;
 	}
+
+	while (head != NULL)
+	{
+		current = head;
+		head = head->next;
+		free(current);
+	}
+
 }
 
