@@ -7,18 +7,18 @@
   */
 int main(void)
 {
-	int count;
 	unsigned long int i, j, sum = 0;
 
-	for (i = 1, j = 2, count = 1; count < 32; i += j, j += i, count+=2)
+	for (i = 1, j = 2; (i <= 4000000) && (j <= 4000000); i += j, j += i)
 	{
 		if (i % 2 == 0)
 		{
 			sum += i;
 		}
-		else if(j % 2 == 0)
-		{	
-			sum += i;
+
+		if (j % 2 == 0)
+		{
+			sum += j;
 		}
 	}
 	printf("%lu\n", sum);

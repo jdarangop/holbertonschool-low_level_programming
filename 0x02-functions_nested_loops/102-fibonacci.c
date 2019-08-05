@@ -10,7 +10,7 @@ int main(void)
 	int count;
 	unsigned long int i, j;
 
-	for (i = 1, j = 2, count = 2; count < 51; i += j, j += i, count+=2)
+	for (i = 1, j = 2, count = 2; count < 51; i += j, j += i, count += 2)
 	{
 		printf("%lu, ", i);
 		if (count == 50)
