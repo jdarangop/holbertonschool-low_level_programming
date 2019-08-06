@@ -12,6 +12,9 @@ size_t print_listint_safe(const listint_t *head)
 	void *addr_prev, *addr_actual;
 
 	addr_prev = (void *)head;
+	if (head == NULL)
+		return (0);
+
 	while (head != NULL)
 	{
 		addr_actual = (void *)head;
