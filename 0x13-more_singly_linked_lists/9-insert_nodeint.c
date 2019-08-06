@@ -27,6 +27,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
   * insert_nodeint_at_index - Insert a node in a respective index.
   * @head: Linked list.
   * @idx: Index.
+  * @n: Data into the list.
   * Return: Lenght new linked list.
   */
 
