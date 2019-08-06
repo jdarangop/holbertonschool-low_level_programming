@@ -18,7 +18,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (head != NULL)
 	{
 		addr_actual = (void *)head;
-		if (addr_actual > addr_prev)
+		if (addr_actual > addr_prev || addr_prev == (void *)head->next)
 		{
 			printf("-> [%p] %d\n", addr_actual, head->n);
 			return (counter);
