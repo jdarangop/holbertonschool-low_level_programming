@@ -22,6 +22,8 @@ size_t free_listint_safe(listint_t **h)
 		addr_actual = (void *)h;
 		if (addr_actual > addr_prev && flag == 1)
 		{
+			*h = NULL;
+			h = NULL;
 			return (counter);
 		}
 		current = (*h)->next;
