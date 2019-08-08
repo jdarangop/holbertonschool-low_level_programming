@@ -8,7 +8,8 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int mask = 32768;
+	/*unsigned int mask = 32768;*/
+	unsigned long int mask = 4611686018427387904;
 	int flag = 0;
 
 	if (n == 0)
