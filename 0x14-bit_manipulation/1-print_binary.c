@@ -15,13 +15,6 @@ void print_binary(unsigned long int n)
 	/*unsigned long int mask = 1 << 63;*/
 	int flag = 0, counter = 0;
 
-	if (n > mask)
-	{
-		printf("Más grande\n");
-		
-	}
-
-	printf("Numero: %lu\n", n);
 	if (n == 0)
 		_putchar('0');
 
