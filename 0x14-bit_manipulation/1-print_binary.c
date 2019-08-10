@@ -9,10 +9,19 @@
 void print_binary(unsigned long int n)
 {
 	/*unsigned int mask = 32768;*/
-	unsigned long int mask = 4611686018427387904;
+	/*unsigned long int mask = 4611686018427387904;*/
+	unsigned long long int mask = 9223372036854775808U;
+	/*unsigned long long int mask = 18446744073709551615U;*/
 	/*unsigned long int mask = 1 << 63;*/
 	int flag = 0, counter = 0;
 
+	if (n > mask)
+	{
+		printf("Más grande\n");
+		
+	}
+
+	printf("Numero: %lu\n", n);
 	if (n == 0)
 		_putchar('0');
 
