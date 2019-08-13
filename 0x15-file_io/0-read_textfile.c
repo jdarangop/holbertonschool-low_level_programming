@@ -13,20 +13,30 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL || letters == 0)
 		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
-		return (0);
 
 	content = malloc(letters * sizeof(char));
 	if (content == NULL)
 		return (0);
 
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+		return (0);
+
 	tmp = read(fd, content, letters);
 	if (tmp < 0)
+	{
+		close(fd);
+		free(content);
 		return (0);
+	}
+
 	out = write(1, content, letters);
 	if (out < 0)
+	{
+		close(fd);
+		free(content);
 		return (0);
+	}
 	close(fd);
 	free(content);
 
