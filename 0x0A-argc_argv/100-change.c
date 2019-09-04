@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	if (num < 0)
 	{
 		printf("%d\n", count);
-		return (count);
+		return (0);
 	}
 
 	count += num / 25;
@@ -36,5 +36,5 @@ int main(int argc, char *argv[])
 	count += num;
 
 	printf("%d\n", count);
-	return (count);
+	return (0);
 }
