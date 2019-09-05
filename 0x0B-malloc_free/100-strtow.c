@@ -78,7 +78,7 @@ char *_strcpy(char *s, int i, char *tmp)
 {
 	int j;
 
-	for (j = 0; s[i] != ' '; i++, j++)
+	for (j = 0; s[i] != ' ' && s[i] != '\0'; i++, j++)
 	{
 		tmp[j] = s[i];
 	}
