@@ -24,13 +24,13 @@ int lenght(char *s)
   */
 int function(char *s, int len, int count)
 {
-	if (count >= len / 2)
+	if (count > len)
 	{
 		return (1);
 	}
-	else if (*(s + count) == *(s + len - count))
+	else if (*(s + count) == *(s + len))
 	{
-		return (function(s, len, count + 1));
+		return (function(s, len - 1, count + 1));
 	}
 	else
 	{
