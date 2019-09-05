@@ -116,7 +116,7 @@ char **strtow(char *str)
 			tmp[j] = malloc(sizeof(char) * (pos + 1));
 			if (tmp[j] == NULL)
 			{
-				for (t = i; t >= 0; t--)
+				for (t = j; t >= 0; t--)
 				{
 					free(tmp[t]);
 				}
