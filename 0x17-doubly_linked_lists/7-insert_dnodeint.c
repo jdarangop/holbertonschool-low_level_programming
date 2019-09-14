@@ -29,9 +29,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	if (current == NULL)
 	{
-		node = add_dnodeint_end(&*h, n);
-		free(new_node);
-		return (node);
+		if (i == idx - 2)
+		{
+			node = add_dnodeint_end(&*h, n);
+			free(new_node);
+			return (node);
+		}
+		else
+			return (NULL);
 	}
 	else
 	{
