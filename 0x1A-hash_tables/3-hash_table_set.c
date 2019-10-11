@@ -43,7 +43,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(current);
 		}
 		else
-			current->next = new_node;
+			ht->array[index] = new_node;
 	}
 	return (1);
 }
