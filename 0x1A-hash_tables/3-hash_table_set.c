@@ -29,19 +29,31 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		current = ht->array[index];
 		if (strcmp(current->key, key) == 0)
 		{
-			free(current->value);
-			current->value = strdup(value);
 			new_node->next = current->next;
+			ht->array[index] = new_node;
+			free(current->key);
+			free(current->value);
+			free(current);
+			/*free(current->value);*/
+			/*current->value = strdup(value);*/
+			/*new_node->next = current->next;*/
+			/*free(new_node);*/
 			return (1);
 		}
-		while (current->next != NULL && strcmp(current->key, key) != 0)
+		while (current->next != NULL && strcmp(current->next->key, key) != 0)
 		{ current = current->next;
 		}
 		if (strcmp(current->key, key) == 0)
 		{
-			free(current->value);
-			current->value = strdup(value);
-			new_node->next = current->next;
+			new_node->next = current->next->next;
+			free(current->next->key);
+			free(current->next->value);
+			free(current->next);
+			current->next = new_node;
+			/*free(current->value);*/
+			/*current->value = strdup(value);*/
+			/*new_node->next = current->next;*/
+			/*free(new_node);*/
 		}
 		else
 		{
