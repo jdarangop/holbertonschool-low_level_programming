@@ -1,6 +1,19 @@
 #include "hash_tables.h"
 
 /**
+ * free_node - Free a node.
+ * @node: Node to free.
+ *
+ * Return: Void.
+ */
+void free_node(hash_node_t *node)
+{
+	free(node->key);
+	free(node->value);
+	free(node);
+}
+
+/**
  * hash_table_set - Set a value in the hash table.
  * @ht: Hash table.
  * @key: Key to be indexed.
@@ -31,13 +44,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			new_node->next = current->next;
 			ht->array[index] = new_node;
-			free(current->key);
-			free(current->value);
-			free(current);
-			/*free(current->value);*/
-			/*current->value = strdup(value);*/
-			/*new_node->next = current->next;*/
-			/*free(new_node);*/
+			free_node(current);
 			return (1);
 		}
 		while (current->next != NULL && strcmp(current->next->key, key) != 0)
@@ -46,14 +53,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(current->key, key) == 0)
 		{
 			new_node->next = current->next->next;
-			free(current->next->key);
-			free(current->next->value);
-			free(current->next);
+			free_node(current->next);
 			current->next = new_node;
-			/*free(current->value);*/
-			/*current->value = strdup(value);*/
-			/*new_node->next = current->next;*/
-			/*free(new_node);*/
 		}
 		else
 		{
