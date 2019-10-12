@@ -11,25 +11,23 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, flag = 0;
 	hash_node_t *current;
 
+	if (ht == NULL)
+		return;
 	putchar('{');
-	if (ht != NULL)
+	for (i = 0; i < ht->size; i++)
 	{
-		for (i = 0; i < ht->size; i++)
+		current = ht->array[i];
+		if (current != NULL)
 		{
-			current = ht->array[i];
-			if (current != NULL)
+			if (flag == 1)
 			{
-				if (flag == 1)
-				{
-					printf(", ");
-				}
-				flag = 1;
-				while (current->next != NULL)
-				{
-					printf("'%s': '%s'", current->key, current->value);
-					current = current->next;
-				}
+				printf(", ");
+			}
+			flag = 1;
+			while (current != NULL)
+			{
 				printf("'%s': '%s'", current->key, current->value);
+				current = current->next;
 			}
 		}
 	}
