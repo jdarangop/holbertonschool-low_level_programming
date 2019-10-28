@@ -10,22 +10,22 @@
 
 void shell_sort(int *array, size_t size)
 {
-	int gap, j, tmp, gap_p = 1, z;
+	int gap, j, tmp, z;
 	size_t i, k = 1;
-	int gaps[500];
+	/*int gaps[500];*/
 
 	if (size < 2)
 		return;
 
-	for (z = ((int)size / 3) - 1; z >= 0; z--)
+	gap = 1;
+	for (z = 1; z < ((int)size / 3) - 1; z++)
 	{
-		gaps[z] = gap_p;
-		gap_p = 3 * gap_p + 1;
+		gap = 3 * gap + 1;
 	}
 
-	while (k < size / 3)
+	while (gap)
 	{
-		gap = gaps[k];
+		/*gap = gaps[k];*/
 		/*gap = pow((float)3, (float)k) - 1;*/
 		/*gap = gap / 2;*/
 		for (i = gap; i < size; i++)
@@ -39,5 +39,6 @@ void shell_sort(int *array, size_t size)
 		}
 		print_array(array, size);
 		k++;
+		gap = (gap - 1) / 3;
 	}
 }
