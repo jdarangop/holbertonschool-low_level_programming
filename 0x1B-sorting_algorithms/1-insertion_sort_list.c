@@ -23,7 +23,7 @@ void insertion_sort_list(listint_t **list)
 			tmp = current;
 			var = current->n;
 			current = current->next;
-			while (tmp->prev->n >= var && tmp->prev != NULL)
+			while (tmp->prev->n > var && tmp->prev != NULL)
 			{
 				tmp->prev->next = tmp->next;
 				if (tmp->next != NULL)
