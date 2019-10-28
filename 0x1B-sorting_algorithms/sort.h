@@ -25,4 +25,6 @@ void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+void partition_caller(int *array, int left, int right, size_t size);
+int partition(int *array, int left, int right, size_t size);
 #endif
