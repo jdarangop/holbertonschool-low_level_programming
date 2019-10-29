@@ -11,42 +11,41 @@
 void counting_sort(int *array, size_t size)
 {
 	int *tmp, *result;
-	int i, j, z, w, counter;
+	int i, j, z, w, counter, maximum = 0;
 
 	if (size < 2)
 		return;
-	tmp = malloc(sizeof(int) * 100);
+	for (i = 0; i < (int)size; i++)
+	{
+		if (maximum < array[i])
+			maximum = array[i];
+	}
+	tmp = malloc(sizeof(int) * (maximum + 1));
 	if (tmp == NULL)
 		return;
 	result = malloc(sizeof(int) * size);
 	if (result == NULL)
-	{
-		free(tmp);
+	{ free(tmp);
 		return;
 	}
-	for (w = 0; w < 100; w++)
-	{
-		tmp[w] = 0;
+	for (w = 0; w < (maximum + 1); w++)
+	{ tmp[w] = 0;
 	}
 	for (i = 0; i < (int)size; i++)
-	{
-		tmp[array[i]] += 1;
+	{ tmp[array[i]] += 1;
 	}
 	counter = 0;
-	for (j = 0; j < 100; j++)
-	{
-		counter += tmp[j];
+	for (j = 0; j < (maximum + 1); j++)
+	{ counter += tmp[j];
 		tmp[j] = counter;
 	}
-	print_array(tmp, 100);
+	print_array(tmp, (maximum + 1));
 	for (z = 0; z < (int)size; z++)
-	{
-		result[tmp[array[z]] - 1] = array[z];
+	{ result[tmp[array[z]] - 1] = array[z];
 		tmp[array[z]] -= 1;
 	}
 	for (z = 0; z < (int)size; z++)
-	{
-		array[z] = result[z];
+	{ array[z] = result[z];
 	}
 	free(tmp);
 	free(result);
