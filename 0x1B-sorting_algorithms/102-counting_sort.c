@@ -6,7 +6,7 @@
  * @array: List of data
  * @size: Size of the array
  *
- * Return: Always 0
+ * Return: Void.
  */
 void counting_sort(int *array, size_t size)
 {
@@ -20,7 +20,10 @@ void counting_sort(int *array, size_t size)
 		return;
 	result = malloc(sizeof(int) * size);
 	if (result == NULL)
+	{
+		free(tmp);
 		return;
+	}
 	for (w = 0; w < 100; w++)
 	{
 		tmp[w] = 0;
