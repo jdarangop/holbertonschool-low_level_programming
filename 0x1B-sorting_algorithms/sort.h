@@ -32,6 +32,7 @@ void swap(listint_t **list, listint_t **node);
 void cocktail_sort_list(listint_t **list);
 void quick_sort_hoare(int *array, size_t size);
 int partition_hoare(int *array, int left, int right, size_t size);
+void partition_caller_h(int *array, int left, int right, size_t size, int tmp);
 void radix_sort(int *array, size_t size);
 void radix_count(int *array, int size, int j);
 void merge_sort(int *array, size_t size);
