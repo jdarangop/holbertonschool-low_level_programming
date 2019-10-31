@@ -9,6 +9,8 @@ void radix_sort(int *array, size_t size)
 {
 	int tmp_max, i, j;
 
+	if (size < 2)
+		return;
 	tmp_max = array[0];
 	for (i = 1; i < (int)size; i++)
 	{
