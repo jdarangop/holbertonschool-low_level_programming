@@ -7,7 +7,7 @@
  */
 void radix_sort(int *array, size_t size)
 {
-	int tmp_max, i;
+	int tmp_max, i, j;
 
 	tmp_max = array[0];
 	for (i = 1; i < (int)size; i++)
@@ -15,7 +15,7 @@ void radix_sort(int *array, size_t size)
 		if (array[i] > tmp_max)
 			tmp_max = array[i];
 	}
-	for (int j = 1; tmp_max / j > 0; j *= 10)
+	for (j = 1; tmp_max / j > 0; j *= 10)
 	{
 		radix_count(array, size, j);
 		print_array(array, size);
@@ -30,9 +30,11 @@ void radix_sort(int *array, size_t size)
  */
 void radix_count(int *array, int size, int j)
 {
-	int result[size];
+	int *result;
 	int i;
 	int counter[10] = {0};
+
+	result = malloc(sizeof(int) * size);
 
 	for (i = 0; i < size; i++)
 	{
@@ -51,4 +53,5 @@ void radix_count(int *array, int size, int j)
 	{
 		array[i] = result[i];
 	}
+	free(result);
 }
